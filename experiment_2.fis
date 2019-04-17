@@ -1,0 +1,40 @@
+[System]
+Name='experiment_2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='food'
+Range=[0 10]
+NumMFs=2
+MF1='rancid':'trimf',[-1.3627671957672 2.8042328042328 6.9712328042328]
+MF2='delicious':'trimf',[2.7380619047619 6.9047619047619 11.0717619047619]
+
+[Input2]
+Name='service'
+Range=[0 10]
+NumMFs=3
+MF1='poor':'trimf',[-2.58 1.587 5.754]
+MF2='good':'trimf',[0.8333 5 9.167]
+MF3='excellent':'trimf',[4.272 8.439 12.61]
+
+[Output1]
+Name='tip'
+Range=[0 30]
+NumMFs=3
+MF1='cheap':'trimf',[-4.643 7.858 20.36]
+MF2='average':'trimf',[4.087 16.59 29.09]
+MF3='generous':'trimf',[11.79 24.21 36.81]
+
+[Rules]
+1 1, 1 (1) : 2
+0 2, 2 (1) : 2
+2 3, 3 (1) : 2
